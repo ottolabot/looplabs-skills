@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Lab Skill"
+  short_description: "Create a portable shared agent skill"
+  default_prompt: "Use $write-lab-skill to add a focused skill to the shared Loop Labs library."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Wayfinder"
+  short_description: "Map large work as decision tickets"
+  default_prompt: "Use $wayfinder to map this large, uncertain effort before implementation."

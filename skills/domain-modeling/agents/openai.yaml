@@ -1,0 +1,4 @@
+interface:
+  display_name: "Domain Modeling"
+  short_description: "Build a shared project vocabulary"
+  default_prompt: "Use $domain-modeling to define and record the project language for this domain."

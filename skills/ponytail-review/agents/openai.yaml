@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ponytail Review"
+  short_description: "Find complexity and code to remove"
+  default_prompt: "Use $ponytail-review to find what this diff can delete or simplify."

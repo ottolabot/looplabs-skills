@@ -1,0 +1,4 @@
+interface:
+  display_name: "No AI Slop"
+  short_description: "Edit prose without flattening its voice"
+  default_prompt: "Use $no-ai-slop to make this draft sharper and less AI-sounding."

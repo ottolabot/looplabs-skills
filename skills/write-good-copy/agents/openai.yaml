@@ -1,0 +1,4 @@
+interface:
+  display_name: "Write Good Copy"
+  short_description: "Draft specific copy in a chosen voice"
+  default_prompt: "Use $write-good-copy to draft this for the stated audience and voice profile."

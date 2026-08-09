@@ -1,0 +1,4 @@
+interface:
+  display_name: "Ponytail"
+  short_description: "Choose the least code that genuinely works"
+  default_prompt: "Use $ponytail to find the smallest safe implementation for this coding task."

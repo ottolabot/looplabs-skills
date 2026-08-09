@@ -1,0 +1,4 @@
+interface:
+  display_name: "Prototype"
+  short_description: "Build a disposable learning artifact"
+  default_prompt: "Use $prototype to build a throwaway artifact that answers this design question."

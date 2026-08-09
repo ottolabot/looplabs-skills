@@ -1,0 +1,4 @@
+interface:
+  display_name: "To Spec"
+  short_description: "Turn settled context into a specification"
+  default_prompt: "Use $to-spec to synthesize our settled decisions into an executable specification."

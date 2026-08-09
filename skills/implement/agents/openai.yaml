@@ -1,0 +1,4 @@
+interface:
+  display_name: "Implement"
+  short_description: "Execute one bounded piece of work"
+  default_prompt: "Use $implement to complete this ticket and provide verification evidence."

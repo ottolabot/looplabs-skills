@@ -1,0 +1,4 @@
+interface:
+  display_name: "To Tickets"
+  short_description: "Split a spec into vertical work slices"
+  default_prompt: "Use $to-tickets to split this specification into dependency-aware vertical slices."
