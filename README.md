@@ -24,7 +24,7 @@ It is idempotent and refuses to replace conflicting files, non-empty directories
 ## Skills
 
 - Planning: `wayfinder`, `grilling`, `grill-me`, `grill-with-docs`, `domain-modeling`, `research`, `prototype`
-- Delivery: `to-spec`, `to-tickets`, `implement`, `tdd`, `code-review`
+- Delivery: `to-spec`, `to-tickets`, `implement`, `tdd`, `code-review`, `kickstart-prototype-rails-app`
 - Implementation discipline: `karpathy-guidelines`, `ponytail`, `ponytail-review`
 - Writing: `write-good-copy`, `no-ai-slop`
 - Library maintenance: `write-lab-skill`

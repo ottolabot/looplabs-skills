@@ -1,0 +1,4 @@
+interface:
+  display_name: "Kickstart Rails Prototype"
+  short_description: "Bootstrap a working Rails prototype"
+  default_prompt: "Use $kickstart-prototype-rails-app to create a Rails prototype named [name] for [purpose]."
