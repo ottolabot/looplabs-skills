@@ -1,0 +1,4 @@
+interface:
+  display_name: "Audit Public Rails App"
+  short_description: "Audit public Rails production without leaks"
+  default_prompt: "Use $audit-public-rails-app to run a privacy-safe production and dependency audit for this Rails repository."

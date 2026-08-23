@@ -51,3 +51,14 @@ License: MIT; retained as `LICENSES/no-ai-slop-MIT.txt`.
 ## write-lab-skill
 
 `write-lab-skill` is adapted from Loop Labs' earlier [`write-a-personal-skill`](https://github.com/RichStone/dotclaude/blob/0a76195036792592cb3ca0bcfbad670ba6b83fff/skills/write-a-personal-skill/SKILL.md). It replaces dotclaude-specific paths with this repository and documents the shared Claude Code, Codex, and Hermes linking mechanism.
+
+## Audit public Rails app
+
+`audit-public-rails-app` is adapted from Rails Builders'
+[`rails-builders-ops-audit`](https://github.com/RichStone/rails.builders/blob/046d8dc8fc01ac19a9e820356b27ca8ed13371e2/.agents/skills/rails-builders-ops-audit/SKILL.md)
+at pinned commit
+[`046d8dc8fc01ac19a9e820356b27ca8ed13371e2`](https://github.com/RichStone/rails.builders/commit/046d8dc8fc01ac19a9e820356b27ca8ed13371e2).
+The adaptation makes provider and topology discovery portable while retaining
+the public-repository privacy boundary and guarded dependency workflow.
+The source has no separate license file at that commit; see
+`LICENSES/rails-builders-ops-audit-NOTICE.md`.
