@@ -11,9 +11,43 @@ Create one canonical skill. Never maintain separate Claude Code, Codex, and Herm
 
 ## Locate the library
 
-This skill lives at `<repo>/skills/write-lab-skill/`; therefore the canonical skill root is its parent directory and the repository root is two levels above this file. Create new skills as `<repo>/skills/<skill-name>/`.
+This skill lives at `<repo>/skills/write-lab-skill/`; therefore the canonical skill root is its
+parent directory and the repository root is two levels above this file. Create new skills as
+`<repo>/skills/<skill-name>/`.
 
-If the client exposes an official skill-creator skill, load its full instructions before editing. Otherwise follow this workflow directly.
+**Resolve `<repo>` through symlinks before you use it.** A personal harness commonly exposes
+this library by symlinking individual skills into its own `skills/` directory, so the path you
+were invoked from can belong to that harness rather than to this repository. Derive the root
+from the resolved physical path, not from the invocation path:
+
+```bash
+here="$(cd "$(dirname "$(readlink -f "<path to this SKILL.md>")")" && pwd -P)"
+repo="$(cd "$here/../.." && pwd -P)"
+```
+
+**Then confirm you actually landed in this library**, because every `<repo>/...` path below is
+part of it and exists nowhere else:
+
+```bash
+for f in scripts/link-agent-skills.sh scripts/check-repo.sh SOURCES.md LICENSES; do
+  [ -e "$repo/$f" ] || { echo "not the lab library: missing $f"; exit 1; }
+done
+```
+
+If that check fails you resolved into a linking harness instead of the library. Do not create
+the skill there and do not invent the missing tooling; re-resolve the path or ask which
+repository to write to.
+
+## This library is public
+
+Everything here is published. Route the request elsewhere when the skill would need to name the
+user's own hosts, account or workspace identifiers, credential or secret-store paths, employer
+internals, internal ticket identifiers, teammates, or anything else that is only meaningful on
+their machine. Those belong in that user's private harness, and putting them here publishes
+them irreversibly. Keep a lab skill portable enough that a stranger can run it unchanged.
+
+If the client exposes an official skill-creator skill, load its full instructions before editing.
+Otherwise follow this workflow directly.
 
 ## Build the skill
 
