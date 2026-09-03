@@ -14,6 +14,7 @@ Before creating files, ask for the app name and one-sentence purpose, then decid
 - Is error tracking relevant? If yes, ask for the Honeybadger API key.
 - Will the app send production email? If yes, use Resend; ask for its API key and a sender address on a verified Resend domain.
 - Is a Cloudflare tunnel or public hostname needed now? If yes, collect the requested hostname and access level.
+- Is the app intentionally open source? Default to no. This controls both the GitHub repository and production container-image visibility.
 
 Ask for keys through the client's secret-safe input surface, then write them directly to the app's 1Password environment. Do not accept, echo, save, or report a key in ordinary chat, source files, shell history, or terminal output. If a required key is unavailable, leave that integration unconfigured and name it as pending in the final report.
 
@@ -34,7 +35,7 @@ Ask before overwriting a non-empty target directory. Do not ask for access that 
 
 ### GitHub
 
-When an authenticated GitHub client is available, initialize the repository, create the remote under that authenticated identity, set the default branch, push the initial commit, and record the remote in the final report. Otherwise initialize local Git and name GitHub setup as pending.
+When an authenticated GitHub client is available, initialize the repository, create the remote under that authenticated identity, set the default branch, push the initial commit, and record the remote in the final report. Create the repository as private unless the caller explicitly says the app is open source. Otherwise initialize local Git and name GitHub setup as pending.
 
 ### Honeybadger and 1Password
 
@@ -60,6 +61,8 @@ Use one process and one tunnel per app. Verify the requested external URL before
 
 Keep the generated Dockerfile, `/up` health endpoint, production asset setup, and environment-driven configuration working. Do not create Kamal deployment configuration, provision Hetzner, or deploy production during bootstrap. A later explicit graduation can use Kamal on Hetzner and replace SQLite with Postgres only when the app needs multi-instance operation, stronger backups, or shared production data.
 
+During that production graduation, create the container registry repository before the first image push and make it private unless the app was explicitly declared open source. Do not rely on a first `docker push` to create the repository with the namespace default. Before launch, verify an anonymous manifest request or pull is denied while the authenticated Kamal deployment can still pull the image.
+
 ## Verify and hand off
 
 Run the app, tests, and production build/boot checks appropriate to the available environment. Create an initial commit containing the Rails app, homepage feature, visual baseline, tests, and safe operational configuration.
@@ -67,6 +70,7 @@ Run the app, tests, and production build/boot checks appropriate to the availabl
 Finish with a compact report that separates:
 
 - verified local behavior;
+- GitHub repository and production-image visibility, including the anonymous registry check;
 - created GitHub, Honeybadger, Resend, 1Password, and Cloudflare resources;
 - pending or failed external wiring and its recovery step;
 - any hostname or access policy requested;
