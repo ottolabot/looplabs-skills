@@ -25,6 +25,7 @@ It is idempotent and refuses to replace conflicting files, non-empty directories
 
 - Planning: `wayfinder`, `grilling`, `grill-me`, `grill-with-docs`, `domain-modeling`, `research`, `prototype`
 - Delivery: `to-spec`, `to-tickets`, `implement`, `tdd`, `code-review`, `kickstart-prototype-rails-app`
+- Product engineering: `add-product-analytics`
 - Implementation discipline: `karpathy-guidelines`, `ponytail`, `ponytail-review`
 - Writing: `write-good-copy`, `no-ai-slop`
 - Library maintenance: `write-lab-skill`

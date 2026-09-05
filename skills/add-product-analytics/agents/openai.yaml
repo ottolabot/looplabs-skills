@@ -1,0 +1,4 @@
+interface:
+  display_name: "Add Product Analytics"
+  short_description: "Instrument trustworthy web and mobile analytics"
+  default_prompt: "Use $add-product-analytics to design and implement product analytics for this application."
