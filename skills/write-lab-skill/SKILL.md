@@ -91,4 +91,27 @@ Before handing off, confirm:
 - source links and licenses are present for adapted work;
 - all three clients point to the canonical skill root.
 
-Report the created or changed files, validation evidence, and any client restart still required.
+## Land it
+
+**Every edit to this library ends in a commit and a push, in the same turn as the edit.** The
+clients reach these skills through symlinks, so a saved `SKILL.md` is already live in Claude Code,
+Codex and Hermes while being absent from history — it looks finished and stays uncommitted, and it
+reaches no other machine. Landing is part of finishing, not a step to offer the user.
+
+```bash
+cd <repo>
+git status --short
+git add skills/<skill-name>
+git commit -m "Add <skill-name> skill"
+git push
+```
+
+Stage only what you touched, never `git add -A`: a harness that symlinks this library usually has
+unrelated state dirty in its own tree. Use a plain imperative subject. Commit in the repository
+resolved under *Locate the library* — not the harness you were invoked from — and name that
+repository in the hand-back, so which tree it landed in is never left to inference. This library
+is public, so the visibility decision was made when the skill was routed here; there is nothing
+further to weigh at push time.
+
+Report the created or changed files, the repository and commit, validation evidence, and any
+client restart still required.
