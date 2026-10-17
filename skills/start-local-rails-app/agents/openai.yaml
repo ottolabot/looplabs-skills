@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start a Local Rails App"
+  short_description: "Build small Rails apps with SQLite and local files"
+  default_prompt: "Use $start-local-rails-app to build a small local Rails app with SQLite and no external services."
