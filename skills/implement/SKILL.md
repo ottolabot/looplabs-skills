@@ -16,6 +16,7 @@ Apply the [development defaults](../karpathy-guidelines/SKILL.md#development-def
 3. Use the `tdd` skill for relevant existing tests or minimal integration/system coverage at pre-agreed public seams where behavior is non-trivial. Use a disposable behavior probe when new retained coverage is unwarranted.
 4. Run the narrowest relevant checks throughout; run the full applicable suite once at the end.
 5. Use `code-review` and `ponytail-review` on the final diff and address in-scope findings.
-6. Report the changed behavior and concrete verification evidence.
+6. For app changes, show the completed result in the running local app before handing back. Reuse or start the appropriate isolated development server under the repository's lifecycle rules, open the affected page in a visible browser, and demonstrate the changed workflow. For server-only changes, demonstrate the relevant request and response against that server. Leave it available for inspection; report a concrete blocker if the local demonstration cannot be completed.
+7. Report the changed behavior, concrete verification evidence, and the local URL with concise reproduction steps when applicable.
 
 Commit when the repository workflow or user expects a commit. Never push, merge, deploy, or perform another irreversible action without the applicable authorization.
