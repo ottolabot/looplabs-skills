@@ -3,6 +3,8 @@ name: prototype
 description: Build a deliberately disposable artifact that answers one design question about behavior, state, data shape, or UI. Use when discussion and research cannot settle how something should behave or look and a concrete experiment would raise the fidelity.
 ---
 
+Follow the [development defaults](../karpathy-guidelines/SKILL.md#development-defaults): do not add unit tests or explanatory code comments unless the user or repository explicitly requests them. Verify the prototype through its running behavior.
+
 > Adapted from [the upstream prototype skill](https://github.com/mattpocock/skills/blob/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/prototype/SKILL.md) at [the pinned commit](https://github.com/mattpocock/skills/commit/84fdeffd12f2ee307994d1eb6feb48173b6e0502).
 
 # Prototype

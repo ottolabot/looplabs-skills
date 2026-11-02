@@ -9,9 +9,11 @@ description: Implement one bounded specification or ticket, verify it at agreed 
 
 Implement only the approved specification or ticket the user supplied.
 
+Apply the [development defaults](../karpathy-guidelines/SKILL.md#development-defaults): no new unit-test cases or explanatory code comments unless the user or repository explicitly requests them. Maintain existing ones and verify behavior throughout.
+
 1. Read the full ticket, its blockers, repository instructions, glossary, and relevant ADRs.
 2. State the bounded success criteria and verification commands.
-3. Use the `tdd` skill at pre-agreed public seams where behavior is non-trivial.
+3. Use the `tdd` skill for relevant existing tests or minimal integration/system coverage at pre-agreed public seams where behavior is non-trivial. Use a disposable behavior probe when new retained coverage is unwarranted.
 4. Run the narrowest relevant checks throughout; run the full applicable suite once at the end.
 5. Use `code-review` and `ponytail-review` on the final diff and address in-scope findings.
 6. Report the changed behavior and concrete verification evidence.

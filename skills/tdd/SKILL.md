@@ -1,6 +1,6 @@
 ---
 name: tdd
-description: Develop behavior through a red-green loop at agreed public seams, one vertical slice at a time. Use when implementing features or bug fixes test-first, when the user mentions TDD or red-green-refactor, or when durable regression evidence is needed.
+description: Develop behavior through existing tests or integration/system coverage in a red-green loop at agreed public seams. Use when implementing features or bug fixes test-first, when the user mentions TDD or red-green-refactor, or when durable regression evidence is needed.
 ---
 
 > Adapted from [the upstream tdd skill](https://github.com/mattpocock/skills/blob/84fdeffd12f2ee307994d1eb6feb48173b6e0502/skills/engineering/tdd/SKILL.md) at [the pinned commit](https://github.com/mattpocock/skills/commit/84fdeffd12f2ee307994d1eb6feb48173b6e0502).
@@ -10,6 +10,12 @@ description: Develop behavior through a red-green loop at agreed public seams, o
 TDD is the red → green loop. This skill is the reference that makes that loop produce tests worth keeping: what a good test is, where tests go, the anti-patterns, and the rules of the loop. Every section applies on every cycle — consult them before and during the loop, not after.
 
 When exploring the codebase, read `CONTEXT.md` (if it exists) so test names and interface vocabulary match the project's domain language, and respect ADRs in the area you're touching.
+
+## Scope of new coverage
+
+Do not add unit-test files or cases, including cases in an existing unit-test file, unless the user or repository explicitly requests them. Maintain existing tests as behavior changes. Without such a request, new retained coverage must exercise a meaningful integration or system workflow through real application boundaries, not an isolated helper under a different label. Use a disposable probe when retained coverage is unwarranted.
+
+Do not add explanatory code comments or docstrings. Keep existing ones accurate. The examples below illustrate test quality, not permission to add unit tests.
 
 ## What a good test is
 
@@ -21,7 +27,7 @@ See [test examples](references/tests.md) for examples and [mocking guide](refere
 
 A **seam** is the public boundary you test at: the interface where you observe behavior without reaching inside. Tests live at seams, never against internals.
 
-**Test only at pre-agreed seams.** Before writing any test, write down the seams under test and confirm them with the user. No test is written at an unconfirmed seam. You can't test everything — agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
+**Test only at pre-agreed seams.** Honor seams already approved in the request or repository instructions without asking again. Maintaining an existing test uses its established seam and needs no reconfirmation. Otherwise, write down the proposed seams and confirm them with the user before writing tests. You can't test everything — agreeing the seams up front is how testing effort lands on the critical paths and complex logic instead of every edge case.
 
 Ask: "What's the public interface, and which seams should we test?"
 

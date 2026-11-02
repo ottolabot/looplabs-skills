@@ -14,19 +14,25 @@ Run the axes with parallel agents when the client supports them. Otherwise make 
 
 Use the repository's documented issue tracker when available. If no tracker convention exists, discover the spec from commit messages, branch names, or local planning files.
 
+Include the [development defaults](../karpathy-guidelines/SKILL.md#development-defaults) in the Standards pass: flag newly added unit-test cases or explanatory code comments unless explicitly requested by the user or repository. Maintaining existing ones is allowed; do not demand their removal or extra unit tests as a review fix. Integration/system verification remains applicable.
+
 ## Process
 
 ### 1. Pin the fixed point
 
-Whatever the user said is the fixed point — a commit SHA, branch name, tag, `main`, `HEAD~5`, etc. If they didn't specify one, ask for it.
+Honor an explicit fixed point — a commit SHA, branch name, tag, `main`, `HEAD~5`, etc. For a review completing implementation in the current task, default to its recorded starting commit. Ask only when no fixed point is supplied or recorded and the intended diff cannot be determined from the task.
 
-Capture the diff command once: `git diff <fixed-point>...HEAD` (three-dot, so the comparison is against the merge-base). Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
+Capture the diff command once: use `git diff <fixed-point>...HEAD` for a committed branch, or `git diff <fixed-point>` for task changes still in the index or working tree. Also note the list of commits via `git log <fixed-point>..HEAD --oneline`.
 
-Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and the diff is non-empty. A bad ref or empty diff should fail here — not inside two parallel sub-agents.
+For WIP, also inspect `git status --short` and read task-owned untracked files explicitly: `git diff` omits them. Pass that file list to both review axes without staging unrelated work.
+
+Before going further, confirm the fixed point resolves (`git rev-parse <fixed-point>`) and there are changes to review, including any task-owned untracked files. A bad ref or genuinely empty change should fail here — not inside two parallel sub-agents.
 
 ### 2. Identify the spec source
 
-Look for the originating spec, in this order:
+For implementation performed in the current task, use the approved request and settled conversation decisions as the spec. Do not require a separate document or ticket. Follow supplied references when they contain requirements.
+
+When reviewing a pre-existing diff, look for the originating spec in this order:
 
 1. Issue references in the commit messages (`#123`, `Closes #45`, GitLab `!67`, etc.).
 2. A path the user passed as an argument.

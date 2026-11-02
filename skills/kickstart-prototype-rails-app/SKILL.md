@@ -1,11 +1,13 @@
 ---
 name: kickstart-prototype-rails-app
-description: Bootstrap a small, working Rails prototype with Loop Labs defaults: Hotwire, SQLite, expressive dependency-free CSS, isolated git worktrees, optional integrations, an optional scoped Slack collaborator, and a first interactive homepage feature. Use when creating a new Rails app from scratch that should run locally now and be ready for a later Hetzner/Kamal graduation.
+description: "Bootstrap a small, working Rails prototype with Loop Labs defaults: Hotwire, SQLite, expressive dependency-free CSS, isolated git worktrees, optional integrations, an optional scoped Slack collaborator, and a first interactive homepage feature. Use when creating a new Rails app from scratch that should run locally now and be ready for a later Hetzner/Kamal graduation."
 ---
 
 # Kickstart Prototype Rails App
 
 Create a complete, inspectable Rails app in one pass. Prefer Rails defaults and native capabilities over starter kits, frontend frameworks, or new services.
+
+Follow the [development defaults](../karpathy-guidelines/SKILL.md#development-defaults): do not add unit-test cases or explanatory code comments unless explicitly requested. Omit newly generated unit-test scaffolding and explanatory comments; preserve required tool directives and license notices. Do not apply this cleanup to pre-existing code.
 
 ## Run the setup wizard
 
@@ -31,7 +33,7 @@ Ask before overwriting a non-empty target directory. Do not ask for access that 
 2. Give the homepage one small, original, game-like interaction inspired by the app's name and purpose. Keep it server-rendered; use Turbo and a small Stimulus controller only where browser-local interaction benefits. Avoid product-sized features, external APIs, and dependencies.
 3. Replace the stock styling with a dependency-free Loop Labs baseline. Use CSS custom properties, system/fallback typefaces, expressive colour, CSS-made texture, responsive layout, visible focus states, and contrast that meets accessibility basics. Allow ordinary app CSS to override it, and honor an explicit request for a complete redesign.
 4. Add first-class worktree support as described below.
-5. Add the smallest tests that prove the homepage and its interaction work. Run the focused tests and the normal Rails test suite.
+5. Prove the homepage and interaction through a minimal integration/system check. Do not add isolated unit tests. Run the focused checks and the normal Rails test suite.
 
 ### Worktrees
 

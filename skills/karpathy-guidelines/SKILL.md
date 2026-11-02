@@ -11,6 +11,15 @@ Behavioral guidelines to reduce common LLM coding mistakes, derived from [Andrej
 
 **Tradeoff:** These guidelines bias toward caution over speed. For trivial tasks, use judgment.
 
+## Development defaults
+
+Apply these [maintenance defaults](https://x.com/jasich/status/2116154785510338965) unless the user or repository explicitly requests otherwise:
+
+- Do not add unit-test files or cases, including cases added to existing unit-test files. Maintain existing cases as behavior changes; remove only obsolete coverage, never a check that exposes a failure.
+- Do not add explanatory code comments or docstrings. Update existing ones for accuracy or remove obsolete ones; make new code readable through names and structure.
+- Verify behavior with existing suites and real workflow checks. Add integration or system coverage only when it protects a meaningful public contract; an isolated unit test does not become integration coverage by changing its label.
+- Apply the same defaults to new projects, including newly generated scaffolding. Do not sweep existing projects to remove useful tests or comments.
+
 ## 1. Think Before Coding
 
 **Don't assume. Don't hide confusion. Surface tradeoffs.**
@@ -54,8 +63,8 @@ The test: Every changed line should trace directly to the user's request.
 **Define success criteria. Loop until verified.**
 
 Transform tasks into verifiable goals:
-- "Add validation" → "Write tests for invalid inputs, then make them pass"
-- "Fix the bug" → "Write a test that reproduces it, then make it pass"
+- "Add validation" → "Exercise valid and invalid inputs through the real interface"
+- "Fix the bug" → "Reproduce it through the public workflow, fix it, then repeat the check"
 - "Refactor X" → "Ensure tests pass before and after"
 
 For multi-step tasks, state a brief plan:

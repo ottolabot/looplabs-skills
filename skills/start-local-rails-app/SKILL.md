@@ -8,6 +8,8 @@ description: Build or extend a small Rails app that runs locally with SQLite and
 Deliver a useful app the user can start on their own machine. Keep the Rails conventions
 that reduce maintenance, and choose infrastructure in proportion to a single-user tool.
 
+Follow the [development defaults](../karpathy-guidelines/SKILL.md#development-defaults): do not add unit-test cases or explanatory code comments unless explicitly requested. Omit newly generated unit-test scaffolding and explanatory comments; preserve required tool directives and license notices. Maintain existing tests and comments when extending an app.
+
 ## Set the boundary
 
 - Honor the requested app name, location, data model, and supplied design references.
@@ -94,10 +96,11 @@ setup step.
 Build the smallest complete workflow the user requested. Favor accessible forms, useful
 empty states, readable errors, and a clear path back to the main view over dashboard chrome.
 
-Test meaningful behavior at the public boundary: persistence, critical policy/date rules,
+Verify meaningful behavior through integration/system workflows: persistence, critical policy/date rules,
 uploads/downloads, and import idempotency where relevant. Include boundary cases for any
 rolling-window or waiting-period rule rather than testing only today's happy path.
-Use synthetic fixtures instead of committing the user's documents or personal data.
+Use synthetic fixtures instead of committing the user's documents or personal data. Use
+disposable probes where retained integration coverage is unwarranted; do not add unit tests.
 
 Run the relevant test suite and existing lint checks. Build assets if the chosen stack needs
 it. Exercise the primary workflow in a browser and confirm a restart preserves the data and

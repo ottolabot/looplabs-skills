@@ -25,6 +25,10 @@ License: MIT; retained as `LICENSES/mattpocock-skills-MIT.txt`.
 
 The adaptations normalize frontmatter, remove the separate setup-skill dependency, add tracker fallbacks, and make background-agent behavior portable across the three clients.
 
+## Development maintenance defaults
+
+The defaults against adding unit tests and explanatory code comments are inspired by [Jasich's post](https://x.com/jasich/status/2116154785510338965). Loop Labs applies them to new and existing projects while retaining existing suites, meaningful integration/system checks, and maintenance of existing tests and comments. This policy is reflected in the implementation, testing, review, and app-starter skills.
+
 ## Ponytail
 
 Source repository: [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail)

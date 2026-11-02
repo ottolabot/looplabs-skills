@@ -49,7 +49,8 @@ every sibling caller still broken. Fix it once, where all callers route through.
 - Fewest files possible. Shortest working diff wins — but only once you understand the problem. The smallest change in the wrong place isn't lazy, it's a second bug.
 - Complex request? Ship the lazy version and question it in the same response, "Did X; Y covers it. Need full X? Say so." Never stall on an answer you can default.
 - Two stdlib options, same size? Take the one that's correct on edge cases. Lazy means writing less code, not picking the flimsier algorithm.
-- Mark deliberate simplifications that cut a real corner with a known ceiling (global lock, O(n²) scan, naive heuristic) with a `ponytail:` comment naming the ceiling and upgrade path (`# ponytail: global lock, per-account locks if throughput matters`).
+- Do not add unit-test files or cases, explanatory code comments, or explanatory docstrings unless the user or repository explicitly requests them. Maintain existing ones; remove only obsolete ones within the task's scope.
+- Report deliberate simplifications with a known ceiling in the hand-back or relevant existing documentation. Do not add a `ponytail:` code comment to record them.
 
 ## Output
 
@@ -92,12 +93,11 @@ Hardware is never the ideal on paper: a real clock drifts, a real sensor
 reads off, a PCA9685 runs a few percent fast. Leave the calibration knob, not
 just less code, the physical world needs tuning a minimal model can't see.
 
-Lazy code without its check is unfinished. Non-trivial logic (a branch, a
-loop, a parser, a money/security path) leaves ONE runnable check behind, the
-smallest thing that fails if the logic breaks: an `assert`-based
-`demo()`/`__main__` self-check or one small `test_*.py`. No frameworks, no
-fixtures, no per-function suites unless asked. Trivial one-liners need no
-test, YAGNI applies to tests too.
+Lazy code without verification is unfinished. Run relevant existing checks
+and exercise non-trivial behavior through its real interface. Add an
+integration or system check only for a meaningful public workflow; otherwise
+use a disposable probe outside the deliverable and report the result. Do not
+leave a new unit test or embedded self-test behind to satisfy this rule.
 
 ## Boundaries
 
