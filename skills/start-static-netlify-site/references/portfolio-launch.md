@@ -10,6 +10,8 @@
 
 Generate the variants from one small artwork catalog and shared assets. Keep the same form name and field schema across variants so every signup reaches the same list. Put the recommended design at `/`, give alternatives descriptive `/prototype-...` routes, and mark prototypes `noindex` with a canonical link to the main page.
 
+Keep the artwork near the top. Remove repeated discipline labels, numbered section subtitles, and unnecessary exploration prompts when the navigation and section headings already explain the page. Start with body text around 17–18px and readable navigation and captions; inspect the actual mobile rendering. Choose fonts with every required writing system, self-host them when practical, and retain their licenses. Keep generated branding and decorative icons separate from imported original artwork, save their prompts and source files outside the publish directory, and optimize only their web copies.
+
 For multilingual designs, share one translation catalog across variants. Translate the complete visitor flow, including form success and failure messages, count plurals, image descriptions, and supporting pages. Set the document language and preserve the selection in internal links as well as optional local storage. Use language names alongside decorative flags. Check the longest translations at a real narrow viewport, keyboard dismissal and focus return, and reduced-motion behavior for animated controls. Keep source artwork metadata and signup field names stable when translating the presentation.
 
 ## Finish the launch
