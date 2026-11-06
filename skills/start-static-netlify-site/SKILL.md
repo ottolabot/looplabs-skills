@@ -1,6 +1,6 @@
 ---
 name: start-static-netlify-site
-description: Build and deploy a free static website on Netlify. Use when launching a plain HTML site, portfolio, landing page, or waitlist, connecting a custom domain through Porkbun, or adding email capture with Netlify Forms or Google Sheets.
+description: Build and deploy a free static website on Netlify. Use when launching a plain HTML site, connecting a custom domain through Porkbun, adding email capture with Netlify Forms or Google Sheets, or maintaining a Netlify site from Telegram with Hermes.
 ---
 
 # Start a Static Netlify Site
@@ -23,5 +23,9 @@ Use plain HTML, CSS, and JavaScript for a site that needs no build step. Start w
 ## Add optional email capture
 
 Treat a waitlist, newsletter opt-in, or lead form as email capture. If visitors need accounts or login, scope authentication separately. For free capture, use an embedded or linked Google Form when responses should land directly in a Sheet. Use Netlify Forms when the form should match the site. See [Signup options](references/signups.md) for setup, CSV export, and automatic delivery to Sheets.
+
+## Edit from Telegram
+
+For ongoing edits from Telegram, connect Netlify to the site's GitHub repo and use [Hermes on a Mac mini](references/hermes-telegram.md). Set up a separate Hermes profile and checkout, then use pull requests and Deploy Previews to review changes before merging.
 
 Report the verified site URL, deploy method, domain status, and signup destination if configured. Distinguish live checks from local preview checks.
