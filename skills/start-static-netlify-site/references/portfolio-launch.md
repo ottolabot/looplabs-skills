@@ -12,6 +12,8 @@ Generate the variants from one small artwork catalog and shared assets. Keep the
 
 Keep the artwork near the top. Remove repeated discipline labels, numbered section subtitles, and unnecessary exploration prompts when the navigation and section headings already explain the page. Start with body text around 17–18px and readable navigation and captions; inspect the actual mobile rendering. Choose fonts with every required writing system, self-host them when practical, and retain their licenses. Keep generated branding and decorative icons separate from imported original artwork, save their prompts and source files outside the publish directory, and optimize only their web copies.
 
+Keep click-to-enlarge images free of decorative arrow badges when the whole image is already interactive. Preserve the button's accessible name and keyboard focus indicator. Unicode arrows can render as coloured emoji on mobile; use an SVG for any icon that genuinely needs a consistent graphic appearance.
+
 For multilingual designs, share one translation catalog across variants. Translate the complete visitor flow, including form success and failure messages, count plurals, image descriptions, and supporting pages. Set the document language and preserve the selection in internal links as well as optional local storage. Use language names alongside decorative flags. Check the longest translations at a real narrow viewport, keyboard dismissal and focus return, and reduced-motion behavior for animated controls. Keep source artwork metadata and signup field names stable when translating the presentation.
 
 ## Finish the launch
