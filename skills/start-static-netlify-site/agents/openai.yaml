@@ -1,0 +1,4 @@
+interface:
+  display_name: "Start a Static Netlify Site"
+  short_description: "Launch a free static site with optional email capture"
+  default_prompt: "Use $start-static-netlify-site to launch a static site on Netlify Free and walk me through connecting my domain and collecting signups."
