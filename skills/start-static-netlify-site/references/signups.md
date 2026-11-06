@@ -22,6 +22,18 @@ Enable form detection in the site's **Forms** panel and deploy or redeploy the H
 
 Use the built-in confirmation or link the form's `action` to a published thank-you page. Test on the deployed site and check that the entry appears under verified submissions. Submissions are free and unlimited on credit-based plans. Check legacy plan limits separately. Start with the dashboard or export verified submissions as CSV and import the file into Sheets. [Form setup](https://docs.netlify.com/manage/forms/setup/) · [Spam filters](https://docs.netlify.com/manage/forms/spam-filters/) · [Submissions and CSV export](https://docs.netlify.com/manage/forms/submissions/) · [Forms billing](https://docs.netlify.com/manage/forms/usage-and-billing/)
 
+For an AJAX form, include `form-name`, submit URL-encoded data to a deployed site path, and check `response.ok` before showing success. Preserve the address on failure, prevent overlapping submits, and provide a normal HTML `method` and `action` fallback. A successful HTTP response alone does not prove a verified submission exists: check the Forms dashboard after the live test.
+
+## Optional public waitlist count
+
+Expose only an aggregate number through a server function. Never ship a Netlify token, submission list, or email addresses to the browser. Define whether the count means submissions or unique people; unique normalized email addresses are usually more useful for a waitlist.
+
+For a small list, a verified form event can write an empty receipt keyed by a hash of the normalized email to a private Netlify Blobs store. Repeated events and duplicate addresses overwrite the same receipt. Count the keys with paginated listing and strong consistency, and briefly cache the public response. Do not increment a shared number with an unprotected read/modify/write operation. Hashed email keys are still private data. Add deletion/reconciliation instructions so removing or reclassifying a submission also updates its receipt. [Netlify Blobs](https://docs.netlify.com/build/data-and-storage/netlify-blobs/)
+
+Use Netlify's documented form event support. If a typed `formSubmitted` export does not receive events in the chosen deployment setup, the documented `submission-created` filename convention is another supported path. Verify the deployed behavior and logs; a successful bundle or event entry in a build manifest does not prove delivery. Only count verified submissions for the intended form, and verify that an unsigned external request cannot create a receipt. [Event-triggered functions](https://docs.netlify.com/build/functions/trigger-on-events/)
+
+Test a new signup, a duplicate email, the actual public count, and a rejected forged event. Display an explicit unavailable state when the count service fails instead of inventing zero. Clean up test submissions and their receipts, then check the count again. These Functions and storage use the account's applicable quotas; free form submissions do not imply free unlimited custom compute.
+
 ## Netlify Forms → Google Sheets automatically
 
 When the site needs its own HTML form and rows must appear automatically, use a Netlify HTTP POST notification for that form and a Google Apps Script web app. This requires a Google account that permits anonymous web app deployment, a private Sheet, and enough Apps Script quota. [Netlify notifications](https://docs.netlify.com/manage/forms/notifications/) · [Apps Script web apps](https://developers.google.com/apps-script/guides/web) · [Apps Script quotas](https://developers.google.com/apps-script/guides/services/quotas)
