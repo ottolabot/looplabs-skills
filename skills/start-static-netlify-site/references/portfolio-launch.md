@@ -16,6 +16,8 @@ For multilingual designs, share one translation catalog across variants. Transla
 
 ## Finish the launch
 
+When two sites on the same Free team show different Netlify branding, compare project creation dates and their individual badge settings. Netlify documents the badge as off for projects created before August 19, 2026 and on by default for newer Free projects, subject to rollout. An older unbranded site does not establish what a new site will show. [Badge rollout](https://docs.netlify.com/manage/projects/powered-by-netlify-badge/#when-is-the-badge-on)
+
 Check the actual viewport width during mobile testing, every direct prototype route, original image framing, the bottom-of-page portrait, keyboard access to enlarged artwork, and all form states. A local static server cannot process Netlify Forms or platform Functions; verify those after deployment. Confirm a real stored submission and a real count change before calling the waitlist live. Remove only the disposable test entries and their count records after verification.
 
 Hand back the live routes, signup destination, deployment method, and any remaining limitation. Ask which design the user prefers and whether any artwork or biography needs correction. Fold reproducible workflow problems into the reusable skill without including the site's private identifiers or account details.
