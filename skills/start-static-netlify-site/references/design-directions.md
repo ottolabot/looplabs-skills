@@ -27,7 +27,9 @@ Use descriptive routes such as `/prototype-sunroom`, `/prototype-funky-play`, an
 
 Make each image and its metadata read as one unit. A useful starting point is an 8px image-to-caption gap on mobile and 12px on desktop, with roughly 48px between complete works on mobile. Adapt to framing and scale while keeping the internal gap much smaller than the gap between works.
 
-Place title and year together. Keep material and dimensions immediately below, with a small 2–3px row gap; let long translations wrap naturally. Put collaborator credits in that same caption group and alternate-view thumbnails beneath it. Avoid stranding the year on the opposite edge or dimensions beside a separate thumbnail row. Keep original image borders and whitespace intact when originals must remain verbatim.
+Place title and year together. Keep material and dimensions immediately below, with a small 2–3px row gap; let long translations wrap naturally. Put collaborator credits in that same caption group and alternate-view thumbnails beneath it. Avoid stranding the year on the opposite edge or dimensions beside a separate thumbnail row.
+
+If equal CSS gaps still look unequal, inspect the original files: social platforms often bake white bands into square images. Measure spacing from the visible photograph edge, not just the image element's box. When the user wants those gaps corrected, record visually reviewed per-image blank-band insets and hide only those bands in the gallery with an overflow wrapper and proportional CSS offsets. Keep source bytes unchanged and show the full original in the image viewer. Preserve photographed backgrounds, frames, shadows, signatures, and watermarks; do not automatically crop to the subject or force every work into one aspect ratio. Verify narrow and wide layouts and compare source hashes after the change.
 
 ## Branding and interaction
 
