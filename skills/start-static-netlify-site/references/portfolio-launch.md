@@ -10,6 +10,8 @@
 
 Generate the variants from one small artwork catalog and shared assets. Keep the same form name and field schema across variants so every signup reaches the same list. Put the recommended design at `/`, give alternatives descriptive `/prototype-...` routes, and mark prototypes `noindex` with a canonical link to the main page.
 
+For multilingual designs, share one translation catalog across variants. Translate the complete visitor flow, including form success and failure messages, count plurals, image descriptions, and supporting pages. Set the document language and preserve the selection in internal links as well as optional local storage. Use language names alongside decorative flags. Check the longest translations at a real narrow viewport, keyboard dismissal and focus return, and reduced-motion behavior for animated controls. Keep source artwork metadata and signup field names stable when translating the presentation.
+
 ## Finish the launch
 
 Check the actual viewport width during mobile testing, every direct prototype route, original image framing, the bottom-of-page portrait, keyboard access to enlarged artwork, and all form states. A local static server cannot process Netlify Forms or platform Functions; verify those after deployment. Confirm a real stored submission and a real count change before calling the waitlist live. Remove only the disposable test entries and their count records after verification.
